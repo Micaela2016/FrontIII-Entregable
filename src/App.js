@@ -12,6 +12,7 @@ export default class App extends Component {
     }
     this.agregarHistorial = this.agregarHistorial.bind(this);
   }
+
   componentDidMount() {
     swal.fire("Empieza tu aventura");
   }
@@ -22,10 +23,12 @@ export default class App extends Component {
     this.setState({historial: NuevoHistorial});
   };
 
+
+
   render() {
     return (
       <div className='black'>
-        <Aventura agregarHistorial={this.agregarHistorial} opcionAnterior={this.state.opcionAnterior}/>
+        <Aventura agregarHistorial={this.agregarHistorial}/>
         <Historial historial={this.state.historial} opcionAnterior={this.state.opcionAnterior}/>
       </div>
     )

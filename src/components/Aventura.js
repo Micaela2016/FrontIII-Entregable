@@ -14,6 +14,17 @@ export default class Aventura extends Component {
             contador: 0,
         };
     }
+
+    componentDidUpdate(prevProps, prevState){
+        if(prevState.historiaActual !== this.props.historiaActual){
+            swal.fire({
+                position: 'top-end',
+                title: 'Muy bien, has elegido. Segui tu historia',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+    }
     
     onClickOpcionA() {
         if(this.state.contador < eleccionesA.length){
